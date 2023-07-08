@@ -15,9 +15,17 @@ class apiController extends Controller
 
 
         if ($type == 'spells') {
+            /* TODO:
+             * fazer uma paginação pra isso pq assim nao da
+             */
             for ($i = 0; $i < count($data); $i++) {
                 $pattern = "/api/spells/";
                 $data[$i]->url = str_replace($pattern, "", $data[$i]->url);
+                // $res = Http::get("https://www.dnd5eapi.co/api/spells/{$data[$i]->url}");
+                // $description = json_decode($res)->desc;
+
+                // $data[$i]->description = $description;
+                // dd($data[0]);
             }
 
 

@@ -9,7 +9,8 @@
         </div>
 
         @foreach ($data as $spell)
-            <x-card name="{{$spell->name}}" description="descrição" url="{{$spell->url}}"> </x-card>
+
+            <x-card name="{{$spell->name}}" description="{{$spell->description[0] ?? 'nada'}}" url="{{$spell->url}}"> </x-card>
         @endforeach
     </div>
 @endsection
